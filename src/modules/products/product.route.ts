@@ -1,17 +1,12 @@
 import express, { Request, Response } from 'express';
 import { Product } from './product.model';
+import { ProductControllers } from './product.controller';
 
 
 const router = express.Router();
 
 
-router.post('/', async (req: Request, res: Response) => {
-
-  const result = await Product.create(req.body);
-  console.log(result);
-  
-
-})
+router.post('/', ProductControllers.createProductController)
 
 
 
